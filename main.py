@@ -15,10 +15,10 @@ start_on = True
 
 while start_on:
     start = input('Black Jack by LurkerDan \n Начать новую игру? Y or N').lower()
+
     if start == 'y':
         game_on = True
-        player_carddrow = True
-        dealer_carddrow = True
+
     else:
         print('Пока!')
         exit()
@@ -37,7 +37,7 @@ while start_on:
         dealer.print_value('дилера')
         temp_card = dealer.__str__()
         print(dealer.__str__())
-        print(f'______\n|xxxx|\n|xxxx|\n|____| \n')
+        print(f'_______\n|xxxxx|\n|xxxxx|\n|xxxxx|\n|_____| \n')
         dealer.add_card()
 
         # Стартовая рука игрока

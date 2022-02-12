@@ -34,7 +34,7 @@ class Hand:
         else:
             self.sing = ' A'
 
-        return f'______\n|{self.suit} {self.sing}|\n|    |\n|____| \n'
+        return f'_______\n|{self.suit}  {self.sing}|\n|     |\n|     |\n|_____| \n'
 
     def add_card(self):
         self.card = current_deck.pop()
