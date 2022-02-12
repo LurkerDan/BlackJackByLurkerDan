@@ -29,9 +29,7 @@ while start_on:
     chip.take_bet(chip)
 
     while game_on:
-        # Обнуление
 
-        current_deck = []
         current_deck = copy.deepcopy(deck.generate_deck())
 
         player = Hand(current_deck)

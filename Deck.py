@@ -3,11 +3,10 @@ import random
 
 class Deck:
 
-    def __init__(self):
-        self.shuffle_deck = []
-
     def generate_deck(self):
         deck = []
+        shuffle_deck = []
+        deck = deck
         for y in range(4):
             x = 0.5
             value = []
@@ -24,7 +23,7 @@ class Deck:
         j = 0
         for i in range(len(deck)):
             for j in range(len(value)):
-                self.shuffle_deck.append(deck[i][j])
+                shuffle_deck.append(deck[i][j])
             j += 1
-        random.shuffle(self.shuffle_deck)
-        return self.shuffle_deck
+        random.shuffle(shuffle_deck)
+        return shuffle_deck
