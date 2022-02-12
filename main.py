@@ -6,14 +6,11 @@ import time
 chip = Chip()
 
 deck = Deck()
-current_deck = deck.generate_deck()
 
-player = Hand(current_deck)
-dealer = Hand(current_deck)
 
 temp_dcard = ''
 temp_pcard = ''
-
+current_deck = deck.generate_deck().copy()
 
 
 start_on = True
@@ -33,7 +30,8 @@ while start_on:
     chip.take_bet(chip)
     while game_on:
         # Обнуление
-        current_deck = deck.generate_deck()
+        player = Hand(current_deck)
+        dealer = Hand(current_deck)
         player.value = 0
         dealer.value = 0
         player.cards = []
@@ -45,6 +43,7 @@ while start_on:
         dealer.print_value('дилера')
         temp_card = dealer.__str__()
         print(dealer.__str__())
+        time.sleep(0.5)
         print(f'_______\n|xxxxx|\n|xxxxx|\n|xxxxx|\n|_____| \n')
         dealer.add_card()
 
@@ -52,6 +51,7 @@ while start_on:
         player.add_card()
         temp_pcard = player.__str__()
         player.add_card()
+        time.sleep(0.5)
         player.print_value('игрока')
         print(player.__str__())
         print(temp_pcard)
@@ -69,6 +69,7 @@ while start_on:
 
         while player_input == 'y':
             player.add_card()
+            time.sleep(0.5)
             print(player.__str__())
             player.print_value('игрока')
             if player.value > 21:
@@ -91,9 +92,11 @@ while start_on:
 
         while dealer.value <17:
             dealer.add_card()
+            time.sleep(0.5)
             print(dealer.__str__())
 
         dealer.print_value('дилера')
+        time.sleep(0.5)
         player.print_value('игрока')
 
         if dealer.value > 21:
