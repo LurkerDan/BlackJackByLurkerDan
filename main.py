@@ -1,17 +1,15 @@
 from Hand import Hand
 from Chips import Chip
 from Deck import Deck
+import copy
 import time
 
 chip = Chip()
 
 deck = Deck()
 
-
 temp_dcard = ''
 temp_pcard = ''
-current_deck = deck.generate_deck().copy()
-
 
 start_on = True
 
@@ -26,14 +24,25 @@ while start_on:
     else:
         print('Пока!')
         exit()
+
     print(f'Ваши фишки {chip.total}')
     chip.take_bet(chip)
+
     while game_on:
         # Обнуление
+
+        current_deck = []
+        current_deck = copy.deepcopy(deck.generate_deck())
+
         player = Hand(current_deck)
         dealer = Hand(current_deck)
+
+        temp_dcard = ''
+        temp_pcard = ''
+
         player.value = 0
         dealer.value = 0
+
         player.cards = []
         dealer.cards = []
 
@@ -118,7 +127,3 @@ while start_on:
             print('Ничья!')
             game_on = False
             break
-
-
-
-
