@@ -6,7 +6,6 @@ class Deck:
     def generate_deck(self):
         deck = []
         shuffle_deck = []
-        deck = deck
         for y in range(4):
             x = 0.5
             value = []
