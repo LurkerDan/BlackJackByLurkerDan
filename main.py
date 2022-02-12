@@ -73,8 +73,8 @@ while start_on:
             break
 
         # Ход Диллера
-        print(dealer.__str__())
         print(temp_card)
+        print(dealer.__str__())
 
         if dealer.value == 21:
             print('У диллера 21! Вы проиграли!')
