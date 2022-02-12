@@ -1,16 +1,14 @@
 from Deck import Deck
 
-deck = Deck()
-current_deck = deck.generate_deck().copy()
 
 class Hand:
 
-    def __init__(self):
+    def __init__(self,current_deck):
         self.cards = []
         self.value = 0
         self.aces = 0
         self.suit = ''
-
+        self.current_deck = current_deck
 
     def __str__(self):
         if self.card[1] == 0:
@@ -37,7 +35,8 @@ class Hand:
         return f'_______\n|{self.suit}  {self.sing}|\n|     |\n|     |\n|_____| \n'
 
     def add_card(self):
-        self.card = current_deck.pop()
+
+        self.card = self.current_deck.pop()
         self.cards.append(self.card)
         if self.card[0] == 14:
             self.aces += 1

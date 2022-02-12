@@ -1,12 +1,19 @@
 from Hand import Hand
 from Chips import Chip
+from Deck import Deck
 import time
 
 chip = Chip()
-player = Hand()
-dealer = Hand()
+
+deck = Deck()
+current_deck = deck.generate_deck()
+
+player = Hand(current_deck)
+dealer = Hand(current_deck)
+
 temp_dcard = ''
 temp_pcard = ''
+
 
 
 start_on = True
@@ -26,6 +33,7 @@ while start_on:
     chip.take_bet(chip)
     while game_on:
         # Обнуление
+        current_deck = deck.generate_deck()
         player.value = 0
         dealer.value = 0
         player.cards = []
