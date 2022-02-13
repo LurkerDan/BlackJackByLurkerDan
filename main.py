@@ -8,13 +8,9 @@ chip = Chip()
 
 deck = Deck()
 
-temp_dcard = ''
-temp_pcard = ''
-
 start_on = True
 
 # Ставка
-
 while start_on:
     start = input('Black Jack by LurkerDan \n Начать новую игру? Y or N').lower()
 
